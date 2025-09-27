@@ -559,10 +559,10 @@
             
             // Check Trinity list first (sectors then outcodes)
             if (trinityPostalCodes.includes(sector)) {
-                showResult(`<img src="trinity-logo.png" alt="Trinity" style="height: 40px; margin-bottom: 10px;> <strong>trinity</strong><br><strong>${cleanInput}</strong> is covered by Trinity outcode: <strong>${outcode}</strong>`, 'found');
+                showResult(`<img src="trinity-logo.png" alt="Trinity" style="height: 40px; margin-bottom: 10px;"><br><strong>Trinity</strong><br><strong>${cleanInput}</strong> is covered by Trinity postal sector: <strong>${sector}</strong>`, 'found');
                 return;
             } else if (trinityPostalCodes.includes(outcode)) {
-                showResult(`<img src="trinity-logo.png" alt="Trinity" style="height: 40px; margin-bottom: 10px;> <strong>trinity</strong><br><strong>${cleanInput}</strong> is covered by Home Instead outcode: <strong>${outcode}</strong>`, 'found');
+                showResult(`<img src="trinity-logo.png" alt="Trinity" style="height: 40px; margin-bottom: 10px;"><br><strong>Trinity</strong><br><strong>${cleanInput}</strong> is covered by Trinity postal sector: <strong>${sector}</strong>`, 'found');
                 return;
             }
             
