@@ -540,9 +540,30 @@
             "HA6 2",
             "HA6 3",
             "HA7 3",
-            "HA7 4",
+            "HA7 4"
         ];
-        
+        // Load and display the hardcoded lists on page load
+window.onload = function() {
+    updateStats();
+    showResult(`Ready! ${trinityPostalCodes.length + homeInsteadPostalCodes.length} postal codes loaded.`, 'found');
+}
+
+function updateList() {
+    updateStats();
+    showResult(`Hardcoded lists active: ${trinityPostalCodes.length + homeInsteadPostalCodes.length} entries loaded.`, 'found');
+}
+
+function updateStats() {
+    const stats = document.getElementById('stats');
+    const listTextarea = document.getElementById('postcodeList');
+    
+    listTextarea.value = `TRINITY: ${trinityPostalCodes.length} entries loaded\nHOME INSTEAD: ${homeInsteadPostalCodes.length} entries loaded\n\n(Full lists are hidden for security)`;
+    
+    stats.innerHTML = `
+        <strong>Total entries: ${trinityPostalCodes.length + homeInsteadPostalCodes.length}</strong><br>
+        <small>Trinity: ${trinityPostalCodes.length} • Home Instead: ${homeInsteadPostalCodes.length}</small>
+    `;
+}
         // Clean up both postal code lists on load (remove extra spaces, fix case)
         trinityPostalCodes = trinityPostalCodes.map(code => code.trim().toUpperCase()).filter(code => code.length > 0);
         homeInsteadPostalCodes = homeInsteadPostalCodes.map(code => code.trim().toUpperCase()).filter(code => code.length > 0);<!DOCTYPE html>
