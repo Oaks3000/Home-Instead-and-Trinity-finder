@@ -1,0 +1,599 @@
+        // Store the postal codes lists - HARDCODED
+        let trinityPostalCodes = [
+            " BA10 ",
+            " BA13 ",
+            " BA11 ",
+            " BA12 ",
+            " BA14 ",
+            " BA15 ",
+            " BA2 ",
+            " BA3 ",
+            " BA4 ",
+            " BA7 ",
+            " BN2 ",
+            " BN20 ",
+            " BN21 ",
+            " BN22 ",
+            " BN23 ",
+            " BN24 ",
+            " BN25 ",
+            " BN26 ",
+            " BN27 ",
+            " BS10 ",
+            " BS11 ",
+            " BS14 ",
+            " BS15 ",
+            " BS16 ",
+            " BS30 ",
+            " BS32 ",
+            " BS34 ",
+            " BS35 ",
+            " BS36 ",
+            " BS37 ",
+            " BS6 ",
+            " BS7 ",
+            " BS8 ",
+            " BS9 ",
+            " CB8 ",
+            " CB10 ",
+            " E1 ",
+            " E14 ",
+            " E2 ",
+            " E3 ",
+            " E5 ",
+            " E8 ",
+            " E9 ",
+            " EC1 ",
+            " EC2 ",
+            " EC3 ",
+            " EC4 ",
+            " EN1 1 ",
+            " EN1 2 ",
+            " EN1 3 ",
+            " EN1 4 ",
+            " EN1 9 ",
+            " EN2 0 ",
+            " EN2 6 ",
+            " En2 7 ",
+            " EN2 8 ",
+            " EN2 9 ",
+            " EN3 4 ",
+            " EN3 5 ",
+            " EN3 6 ",
+            " EN3 7 ",
+            " EN4 0 ",
+            " EN4 8 ",
+            " EN4 9 ",
+            " EN6 1 ",
+            " EN6 2 ",
+            " EN6 3 ",
+            " EN6 4 ",
+            " EN6 5 ",
+            " EN6 9 ",
+            " GU10 ",
+            " GU11 ",
+            " GU12 ",
+            " GU13 ",
+            " GU14 ",
+            " GU15 ",
+            " GU16 ",
+            " GU17 ",
+            " GU18 ",
+            " GU19 ",
+            " GU1 ",
+            " GU2 ",
+            " GU20 ",
+            " GU21 ",
+            " GU22 ",
+            " GU23 ",
+            " GU24 ",
+            " GU3 ",
+            " GU4 ",
+            " GU5 ",
+            " GU52 ",
+            " GU6 ",
+            " GU7 ",
+            " GU8 ",
+            " GU9 ",
+            " GU9 ",
+            " HA1 1 ",
+            " HA1 2 ",
+            " HA1 3 ",
+            " HA1 4 ",
+            " HA1 9 ",
+            " HA2 0 ",
+            " HA2 2 ",
+            " HA2 6 ",
+            " HA2 7 ",
+            " HA2 8 ",
+            " HA2 9 ",
+            " HA4 0 ",
+            " HA4 4 ",
+            " HA4 6 ",
+            " HA4 7 ",
+            " HA4 8 ",
+            " HA4 9 ",
+            " HA5 1 ",
+            " HA5 2 ",
+            " HA5 3 ",
+            " HA5 4 ",
+            " HA5 5 ",
+            " HA5 9 ",
+            " HA6 1 ",
+            " HA6 2 ",
+            " HA6 3 ",
+            " HA6 9 ",
+            " HA7 1 ",
+            " HA7 2 ",
+            " HA7 3 ",
+            " HA7 4 ",
+            " HA7 9 ",
+            " IP14 ",
+            " IP27 ",
+            " IP28 ",
+            " IP28 ",
+            " IP29 ",
+            " IP30 ",
+            " IP31 ",
+            " IP32 ",
+            " IP33 ",
+            " KT1 ",
+            " KT10 ",
+            " KT11 ",
+            " KT12 ",
+            " KT13 ",
+            " KT15 ",
+            " KT16 ",
+            " KT17 ",
+            " KT18 ",
+            " KT19 ",
+            " KT2 ",
+            " KT20 ",
+            " CR5 ",
+            " KT21 ",
+            " KT22 ",
+            " KT24 ",
+            " KT3 ",
+            " KT4 ",
+            " KT5 ",
+            " KT6 ",
+            " KT7 ",
+            " KT8 ",
+            " KT9 ",
+            " N1 ",
+            " N11 1 ",
+            " N11 2 ",
+            " N11 3 ",
+            " N11 9 ",
+            " N13 4 ",
+            " N13 5 ",
+            " N13 6 ",
+            " N13 9 ",
+            " N14 4 ",
+            " N14 5 ",
+            " N14 6 ",
+            " N14 7 ",
+            " N14 9 ",
+            " N17 0 ",
+            " N17 1 ",
+            " N17 16 ",
+            " N17 7 ",
+            " N17 8 ",
+            " N17 9 ",
+            " N18 1 ",
+            " N18 2 ",
+            " N18 3 ",
+            " N18 9 ",
+            " N21 1 ",
+            " N21 2 ",
+            " N21 3 ",
+            " N21 9 ",
+            " N22 5 ",
+            " N22 6 ",
+            " N22 7 ",
+            " N22 8 ",
+            " N22 9 ",
+            " N5 ",
+            " N7 ",
+            " N9 0 ",
+            " N9 1 ",
+            " N9 7 ",
+            " N9 8 ",
+            " N9 9 ",
+            " NW1 ",
+            " NW10 ",
+            " NW2 ",
+            " NW6 ",
+            " NW8 ",
+            " rg9 ",
+            " RH11 ",
+            " RH18 ",
+            " RH19 ",
+            " RH8 ",
+            " RH7 ",
+            " RH10 ",
+            " SE1 ",
+            " SE11 ",
+            " SE16 ",
+            " SE17 ",
+            " SE5 ",
+            " SE8 ",
+            " SL4 ",
+            " SL5 ",
+            " SL6 ",
+            " SL7 ",
+            " SL8 ",
+            " SM1 ",
+            " SM2 ",
+            " SM3 ",
+            " SM4 ",
+            " SM5 ",
+            " SM6 ",
+            " SM7 ",
+            " SN10 ",
+            " SN12 ",
+            " SN13 ",
+            " SP3 ",
+            " SP8 ",
+            " tn8 ",
+            " SW3 ",
+            " SW5 ",
+            " SW6 ",
+            " SW7 ",
+            " SW8 ",
+            " TN13 ",
+            " TN15 ",
+            " TN21 ",
+            " TN22 ",
+            " TN39 ",
+            " TN7 ",
+            " TN8 ",
+            " UB10 0 ",
+            " UB10 8 ",
+            " UB10 9 ",
+            " UB5 4 ",
+            " UB9 4 ",
+            " UB9 5 ",
+            " UB9 6 ",
+            " W10 ",
+            " W11 ",
+            " W8 ",
+            " WC1 ",
+            " WC2 ",
+            " WD18 0 ",
+            " WD18 1 ",
+            " WD18 6 ",
+            " WD18 7 ",
+            " WD18 8 ",
+            " WD18 9 ",
+            " WD19 4 ",
+            " WD19 5 ",
+            " WD19 6 ",
+            " WD19 7 ",
+            " WD3 0 ",
+            " WD3 1 ",
+            " WD3 3 ",
+            " WD3 4 ",
+            " WD3 5 ",
+            " WD3 6 ",
+            " WD3 7 ",
+            " WD3 8 ",
+            " WD3 9 ",
+            " WD4 4 ",
+            " WD4 8 ",
+            " WD4 9 ",
+            " WD6 1 ",
+            " WD6 2 ",
+            " WD6 3 ",
+            " WD6 4 ",
+            " WD6 5 ",
+            " WD6 9 "
+        ];
+        
+        let homeInsteadPostalCodes = [
+            // Add your Home Instead postal codes here when ready
+            // Example format:
+            // "SW1",
+            // "SW1 1", 
+            // "M1",
+            // "M1 2",
+            // etc...
+        ];
+        
+        // Clean up both postal code lists on load (remove extra spaces, fix case)
+        trinityPostalCodes = trinityPostalCodes.map(code => code.trim().toUpperCase()).filter(code => code.length > 0);
+        homeInsteadPostalCodes = homeInsteadPostalCodes.map(code => code.trim().toUpperCase()).filter(code => code.length > 0);<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postcode Validator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+        
+        .input-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            width: 100%;
+            transition: transform 0.2s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .result {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            display: none;
+        }
+        
+        .result.found {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .result.not-found {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .result.error {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        
+        .admin-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #f0f0f0;
+        }
+        
+        .admin-section h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 14px;
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .help-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+        
+        .stats {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            text-align: center;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏠 Postcode Validator</h1>
+        
+        <div class="input-group">
+            <label for="postcode">Enter Full Postcode:</label>
+            <input type="text" id="postcode" placeholder="e.g. SW1A 1AA or M1 1AA" autocomplete="off">
+        </div>
+        
+        <button class="btn" onclick="validatePostcode()">Check Postcode</button>
+        
+        <div id="result" class="result"></div>
+        
+        <div class="admin-section">
+            <h3>📋 Trinity & Home Instead Coverage</h3>
+            <div class="input-group">
+                <label>Current Lists:</label>
+                <textarea id="postcodeList" readonly style="background: #f8f9fa; cursor: default;" placeholder="Your hardcoded postal codes will appear here..."></textarea>
+                <div class="help-text">
+                    These lists are hardcoded into the tool. Trinity and Home Instead coverage areas are shown separately.
+                </div>
+            </div>
+            
+            <div id="stats" class="stats">
+                <strong>Loading postal codes...</strong>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Store the postal codes list - HARDCODED
+        let postalCodes = [
+            // Replace this section with your actual 290 entries
+            "SW1A",
+            "SW1A 1",
+            "SW1A 2", 
+            "M1",
+            "M1 1",
+            "M1 2",
+            "E1",
+            "E1 6",
+            "W1A",
+            "W1A 0",
+            // Add all your remaining entries here, one per line
+            // Each entry should be in quotes and followed by a comma
+            // Example format:
+            // "B1",
+            // "B1 1",
+            // "B2 4",
+            // etc...
+        ];
+        
+        // Load and display the hardcoded lists on page load
+        window.onload = function() {
+            updateStats();
+            showResult(`Ready! ${trinityPostalCodes.length + homeInsteadPostalCodes.length} postal codes loaded.`, 'found');
+        }
+        
+        function updateList() {
+            // This function is no longer needed since the lists are hardcoded
+            // But keeping it in case of future modifications
+            updateStats();
+            showResult(`Hardcoded lists active: ${trinityPostalCodes.length + homeInsteadPostalCodes.length} entries loaded.`, 'found');
+        }
+        
+        function updateStats() {
+            const stats = document.getElementById('stats');
+            const listTextarea = document.getElementById('postcodeList');
+            
+            // Combine both lists for display
+            const combinedList = [...trinityPostalCodes, ...homeInsteadPostalCodes];
+            const trinityOutcodes = trinityPostalCodes.filter(code => !code.includes(' '));
+            const trinitySectors = trinityPostalCodes.filter(code => code.includes(' '));
+            const homeInsteadOutcodes = homeInsteadPostalCodes.filter(code => !code.includes(' '));
+            const homeInsteadSectors = homeInsteadPostalCodes.filter(code => code.includes(' '));
+            
+            // Display the combined list in the textarea
+            listTextarea.value = `TRINITY:\n${trinityPostalCodes.join('\n')}\n\nHOME INSTEAD:\n${homeInsteadPostalCodes.join('\n')}`;
+            
+            stats.innerHTML = `
+                <strong>Total entries: ${combinedList.length}</strong><br>
+                <small>Trinity: ${trinityPostalCodes.length} (${trinityOutcodes.length} outcodes • ${trinitySectors.length} sectors)</small><br>
+                <small>Home Instead: ${homeInsteadPostalCodes.length} (${homeInsteadOutcodes.length} outcodes • ${homeInsteadSectors.length} sectors)</small>
+            `;
+        }
+        
+        function validatePostcode() {
+            const input = document.getElementById('postcode').value.trim().toUpperCase();
+            
+            if (!input) {
+                showResult('Please enter a postcode', 'error');
+                return;
+            }
+            
+            if (trinityPostalCodes.length === 0 && homeInsteadPostalCodes.length === 0) {
+                showResult('No postal codes loaded', 'error');
+                return;
+            }
+            
+            // Clean the input postcode
+            const cleanInput = input.replace(/\s+/g, ' ');
+            
+            // Extract outcode and sector from the input
+            const parts = cleanInput.split(' ');
+            if (parts.length !== 2) {
+                showResult('Please enter a valid full postcode (e.g. SW1A 1AA)', 'error');
+                return;
+            }
+            
+            const outcode = parts[0];
+            const inwardCode = parts[1];
+            const sectorDigit = inwardCode.charAt(0);
+            const sector = outcode + ' ' + sectorDigit;
+            
+            // Check Trinity list first (sectors then outcodes)
+            if (trinityPostalCodes.includes(sector)) {
+                showResult(`✅ <strong>Trinity</strong><br><strong>${cleanInput}</strong> is covered by Trinity postal sector: <strong>${sector}</strong>`, 'found');
+                return;
+            } else if (trinityPostalCodes.includes(outcode)) {
+                showResult(`✅ <strong>Trinity</strong><br><strong>${cleanInput}</strong> is covered by Trinity outcode: <strong>${outcode}</strong>`, 'found');
+                return;
+            }
+            
+            // Check Home Instead list (sectors then outcodes)
+            if (homeInsteadPostalCodes.includes(sector)) {
+                showResult(`✅ <strong>Home Instead</strong><br><strong>${cleanInput}</strong> is covered by Home Instead postal sector: <strong>${sector}</strong>`, 'found');
+                return;
+            } else if (homeInsteadPostalCodes.includes(outcode)) {
+                showResult(`✅ <strong>Home Instead</strong><br><strong>${cleanInput}</strong> is covered by Home Instead outcode: <strong>${outcode}</strong>`, 'found');
+                return;
+            }
+            
+            // No match found in either list
+            showResult(`❌ <strong>No coverage yet</strong><br><strong>${cleanInput}</strong> is not covered by Trinity or Home Instead`, 'not-found');
+        }
+        
+        function showResult(message, type) {
+            const result = document.getElementById('result');
+            result.innerHTML = message;
+            result.className = `result ${type}`;
+            result.style.display = 'block';
+        }
+        
+        // Allow Enter key to trigger validation
+        document.getElementById('postcode').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                validatePostcode();
+            }
+        });
+    </script>
+</body>
+</html>
