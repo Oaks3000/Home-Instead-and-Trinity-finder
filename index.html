@@ -775,66 +775,54 @@
         }
         
         function validatePostcode() {
-            const input = document.getElementById('postcode').value.trim().toUpperCase();
-            
-            if (!input) {
-                showResult('Please enter a postcode', 'error');
-                return;
-            }
-            
-            if (trinityPostalCodes.length === 0 && homeInsteadPostalCodes.length === 0) {
-                showResult('No postal codes loaded', 'error');
-                return;
-            }
-            
-            // Clean the input postcode
-            const cleanInput = input.replace(/\s+/g, ' ');
-            
-            // Extract outcode and sector from the input
-            const parts = cleanInput.split(' ');
-            if (parts.length !== 2) {
-                showResult('Please enter a valid full postcode (e.g. SW1A 1AA)', 'error');
-                return;
-            }
-            
-            const outcode = parts[0];
-            const inwardCode = parts[1];
-            const sectorDigit = inwardCode.charAt(0);
-            const sector = outcode + ' ' + sectorDigit;
-            
-            // Check Trinity list first (sectors then outcodes)
-            if (trinityPostalCodes.includes(sector)) {
-                showResult(`✅ <strong>Trinity</strong><br><strong>${cleanInput}</strong> is covered by Trinity postal sector: <strong>${sector}</strong>`, 'found');
-                return;
-            } else if (trinityPostalCodes.includes(outcode)) {
-                showResult(`✅ <strong>Trinity</strong><br><strong>${cleanInput}</strong> is covered by Trinity outcode: <strong>${outcode}</strong>`, 'found');
-                return;
-            }
-            
-            // Check Home Instead list (sectors then outcodes)
-            if (homeInsteadPostalCodes.includes(sector)) {
-                showResult(`✅ <strong>Home Instead</strong><br><strong>${cleanInput}</strong> is covered by Home Instead postal sector: <strong>${sector}</strong>`, 'found');
-                return;
-            } else if (homeInsteadPostalCodes.includes(outcode)) {
-                showResult(`✅ <strong>Home Instead</strong><br><strong>${cleanInput}</strong> is covered by Home Instead outcode: <strong>${outcode}</strong>`, 'found');
-                return;
-            }
-            
-            // No match found in either list
-            showResult(`❌ <strong>No coverage yet</strong><br><strong>${cleanInput}</strong> is not covered by Trinity or Home Instead`, 'not-found');
-        }
-        
-        function showResult(message, type) {
-            const result = document.getElementById('result');
-            result.innerHTML = message;
-            result.className = `result ${type}`;
-            result.style.display = 'block';
-        }
-        
-        // Allow Enter key to trigger validation
-        document.getElementById('postcode').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                validatePostcode();
+    const input = document.getElementById('postcode').value.trim().toUpperCase();
+    
+    if (!input) {
+        showResult('Please enter a postcode', 'error');
+        return;
+    }
+    
+    if (trinityPostalCodes.length === 0 && homeInsteadPostalCodes.length === 0) {
+        showResult('No postal codes loaded', 'error');
+        return;
+    }
+    
+    // Clean the input postcode
+    const cleanInput = input.replace(/\s+/g, ' ');
+    
+    // Extract outcode and sector from the input
+    const parts = cleanInput.split(' ');
+    if (parts.length !== 2) {
+        showResult('Please enter a valid full postcode (e.g. SW1A 1AA)', 'error');
+        return;
+    }
+    
+    const outcode = parts[0];
+    const inwardCode = parts[1];
+    const sectorDigit = inwardCode.charAt(0);
+    const sector = outcode + ' ' + sectorDigit;
+    
+    // Check Trinity list first (sectors then outcodes)
+    if (trinityPostalCodes.includes(sector)) {
+        showResult(`✅ <strong>Trinity</strong><br><strong>${cleanInput}</strong> is covered by Trinity postal sector: <strong>${sector}</strong>`, 'found');
+        return;
+    } else if (trinityPostalCodes.includes(outcode)) {
+        showResult(`✅ <strong>Trinity</strong><br><strong>${cleanInput}</strong> is covered by Trinity outcode: <strong>${outcode}</strong>`, 'found');
+        return;
+    }
+    
+    // Check Home Instead list (sectors then outcodes)
+    if (homeInsteadPostalCodes.includes(sector)) {
+        showResult(`✅ <strong>Home Instead</strong><br><strong>${cleanInput}</strong> is covered by Home Instead postal sector: <strong>${sector}</strong>`, 'found');
+        return;
+    } else if (homeInsteadPostalCodes.includes(outcode)) {
+        showResult(`✅ <strong>Home Instead</strong><br><strong>${cleanInput}</strong> is covered by Home Instead outcode: <strong>${outcode}</strong>`, 'found');
+        return;
+    }
+    
+    // No match found in either list
+    showResult(`❌ <strong>No coverage yet</strong><br><strong>${cleanInput}</strong> is not covered by Trinity or Home Instead`, 'not-found');
+};
             }
         });
     </script>
