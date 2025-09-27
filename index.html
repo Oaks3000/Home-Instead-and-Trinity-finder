@@ -559,7 +559,7 @@
             
             // Check Trinity list first (sectors then outcodes)
             if (trinityPostalCodes.includes(sector)) {
-                showResult(`✅ <strong>Trinity</strong><br><strong>${cleanInput}</strong> is covered by Trinity postal sector: <strong>${sector}</strong>`, 'found');
+                showResult(`Trinity.png <strong>Trinity</strong><br><strong>${cleanInput}</strong> is covered by Trinity postal sector: <strong>${sector}</strong>`, 'found');
                 return;
             } else if (trinityPostalCodes.includes(outcode)) {
                 showResult(`✅ <strong>Trinity</strong><br><strong>${cleanInput}</strong> is covered by Trinity outcode: <strong>${outcode}</strong>`, 'found');
