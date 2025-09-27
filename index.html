@@ -765,7 +765,7 @@
             const homeInsteadSectors = homeInsteadPostalCodes.filter(code => code.includes(' '));
             
             // Display the combined list in the textarea
-            listTextarea.value = `TRINITY:\n${trinityPostalCodes.join('\n')}\n\nHOME INSTEAD:\n${homeInsteadPostalCodes.join('\n')}`;
+            listTextarea.value = `TRINITY: ${trinityPostalCodes.length} entries loaded\nHOME INSTEAD: ${homeInsteadPostalCodes.length} entries loaded\n\n(Full lists are hidden for security)`;
             
             stats.innerHTML = `
                 <strong>Total entries: ${combinedList.length}</strong><br>
