@@ -568,10 +568,10 @@
             
             // Check Home Instead list (sectors then outcodes)
             if (homeInsteadPostalCodes.includes(sector)) {
-                showResult(`✅ <strong>Home Instead</strong><br><strong>${cleanInput}</strong> is covered by Home Instead postal sector: <strong>${sector}</strong>`, 'found');
+                showResult(`<img src="Home Instead.png" alt="Trinity" style="height: 160px; margin-bottom: 10px;">`, 'found');
                 return;
             } else if (homeInsteadPostalCodes.includes(outcode)) {
-                showResult(`✅ <strong>Home Instead</strong><br><strong>${cleanInput}</strong> is covered by Home Instead outcode: <strong>${outcode}</strong>`, 'found');
+                showResult(`<img src="Home Instead.png" alt="Trinity" style="height: 160px; margin-bottom: 10px;">`, 'found');
                 return;
             }
             
